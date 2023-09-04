@@ -1,0 +1,137 @@
+{% extends 'basic.html' %}
+
+{% block title %} Contact | Evangel {% endblock %}
+{% block contactactive %} active {% endblock %}
+
+
+
+{% block body %}
+<!----
+
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+    </div>
+    <form method="POST" action="/contact/">  {% csrf_token %} 
+        <h3>Kindly share with us your thoughts or preferences</h3>
+        <i class="ri-facebook-circle-fill"></i>
+        <i class="ri-github-fill"></i>
+        <i class="ri-linkedin-box-fill"></i>
+
+       <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control my-2" placeholder="Your Name *" value="" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control my-2" placeholder="Your Email *" value="" required />
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <textarea name="msg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="btnSubmit" class="btnContact my-3" value="Send Message"  />
+                    </div>
+                   
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <ul class="nav col-md-4 my-3">
+                    <li class="ms-3"><a class="text-light" href="#"><i class="ri-linkedin-box-fill display-6"></i></a></li>
+                    <li class="ms-3"><a class="text-light" href="#"><i class="ri-facebook-fill display-6"></i></a></li>
+                    <li class="ms-3"><a class="text-light" href="#"><i class="ri-youtube-fill display-6"></i></a></li>
+                    <li class="ms-3"><a class="text-light" href="#"><i class="ri-github-fill display-6" ></i></a></li>
+                  </ul>
+            </div>
+        </div>
+    
+   
+
+   
+    
+    
+    </form>
+</div>
+
+-->
+
+
+<section id="contact">
+  
+    <h3 class="section-header" data-aos="fade-up" data-aos-duration="2000">Contact Me</h3>
+    
+    <div class="contact-wrapper">
+    
+    <!-- Left contact page --> 
+      
+      <form id="contact-form" class="form-horizontal" role="form" action="/contact/" method="POST" data-aos="fade-left" data-aos-duration="2000"> {%csrf_token%}
+         
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+          </div>
+        </div>
+  
+        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="msg" required></textarea>
+        
+        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+          <div class="alt-send-button">
+            <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+          </div>
+        
+        </button>
+        
+      </form>
+      
+    <!-- Left contact page --> 
+      
+        <div class="direct-contact-container" data-aos="fade-right" data-aos-duration="2000">
+  
+          <ul class="contact-list">
+            <li class="list-item"><i class="ri-map-pin-2-line"><span class="contact-text place">Bonpara, Natore, Rajshahi, BD</span></i></li>
+            
+            <li class="list-item"><i class="ri-phone-line"><span class="contact-text phone"><a href="tel:+8801726655657" title="Give me a call">+8801726655657</a></span></i></li>
+            
+            <li class="list-item"><i class="ri-mail-line"><span class="contact-text gmail"><a href="mailto:purificationevan04p@gmail.com" title="Send me an email">purificationevan04p@gmail.com</a></span></i></li>
+            
+          </ul>
+  
+          <hr>
+          <ul class="social-media-list">
+            <li><a href="#" target="_blank" class="contact-icon">
+              <i class="ri-github-fill" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+              <i class="ri-linkedin-fill" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+              <i class="ri-facebook-fill" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+              <i class="ri-youtube-fill" aria-hidden="true"></i></a>
+            </li>       
+          </ul>
+          <hr>
+  
+          <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+  
+        </div>
+      
+    </div>
+    
+  </section>  
+    
+    
+
+
+
+{% endblock %}

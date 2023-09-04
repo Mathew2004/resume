@@ -1,0 +1,73 @@
+{% extends 'basic.html' %}
+
+{% block projactive %} active {% endblock %}
+{% load static %}
+
+{% block body %}
+
+{%for pj in projs%}
+
+    <div class="proj-container" id="{{pj.id}}" data-aos="fade-up" data-aos-duration="2000">
+        <div class="proj-side1" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" data-aos-anchor="#example-anchor"
+        data-aos-offset="500">
+            <h2>{{pj.name}}</h2>
+            <p>
+                {{pj.content|safe}}
+
+            </p>
+            <p>
+                <strong>Languages: </strong> {{pj.skills}}
+            </p>
+        
+          
+           
+        
+            <a href="{{pj.live}}" class="btn btn-danger" target="_blank"> <i class="fa fa-eye"></i> View Site</a>   
+
+           
+
+            
+            <a href="{{pj.code}}" class="btn btn-outline-info" target="_blank"> <i class="ri-github-fill"></i> Github</a>
+
+        </div>
+
+        <div class="proj-side2" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="300" data-aos-anchor="#example-anchor"
+        data-aos-offset="500">
+
+        
+
+        <div id="carouselExampleIndicators{{pj.id}}" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators{{pj.id}}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators{{pj.id}}" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators{{pj.id}}" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/{{pj.pimg1}}" class="d-block " alt="..." data-bs-interval="10000">
+            </div>
+            <div class="carousel-item">
+                <img src="/{{pj.pimg2}}" class="d-block" alt="..." data-bs-interval="20000">
+            </div>
+            <div class="carousel-item">
+                <img src="/{{pj.pimg3}}" class="d-block " alt="...">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators{{pj.id}}" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators{{pj.id}}" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+            
+        </div>
+
+    </div>
+
+{%endfor%}
+
+{%endblock%}

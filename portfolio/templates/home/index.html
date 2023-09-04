@@ -1,0 +1,246 @@
+{% extends 'basic.html' %}
+{% block homeactive %} active {% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+<style>
+
+
+
+</style>
+
+
+
+<div class="home-container">
+    <div class="side1" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+>
+        <h4 > <span class="type"></span>  </h4>
+        <h2 class="">Hi, I am Evangel</h2>
+        <p>
+            Greetings! I'm a Computer Science and Engineering student at Rajshahi University of Engineering and Technology (RUET) 
+            with a burning curiosity for technology and a knack for problem-solving
+
+        </p>
+        <a href="/about/">Learn More about me</a>
+
+    </div>
+
+    <div class="side2" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="300" data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+>
+        <img src="{% static 'img/about.png' %}" alt="model">
+    </div>
+
+</div>
+
+    <div class="box-home">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom" data-aos="zoom-in" data-aos-duration="1000">Recent Works</h2>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+
+      {% for pj in projs %}
+
+      <div class="col" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: linear-gradient(to bottom, rgba(140, 3, 81, 0.542), rgba(5, 17, 12, 0.849)),url('/{{pj.feature}}'); background-size: cover;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-2 mb-4 display-6 lh-1 fw-bold">{{pj.name}}</h3>
+            <p>{{pj.shortDes|slice:"0:200"}}... <br/>
+              <a href="/allprojects/#{{pj.id}}" target="_blank" class="font-monospace badge rounded-pill bg-secondary" style="text-decoration: none;"><i class="fa fa-eye " height="32" width="32"></i>Read More</a> 
+            </p>
+
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <a href="{{pj.live}}" target="_blank" class="font-monospace badge rounded-pill bg-danger" style="text-decoration: none;"><i class="fa fa-eye " height="32" width="32"></i> View Site</a> 
+              </li>
+              <li class="mx-1 mt-auto">
+                <p class="badge rounded-pill bg-primary">Web Dev</p>
+                
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small></small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {%endfor%}
+
+<!----
+      <div class="col" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: linear-gradient(to bottom, rgba(140, 3, 81, 0.542), rgba(5, 17, 12, 0.849)),url('static/img/proj2.png'); background-size: cover;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">MyEcomarce Website</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quae ad quod perspiciatis magni sit?</p>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <a href="#" class="font-monospace badge rounded-pill bg-danger" style="text-decoration: none;"><i class="fa fa-eye " height="32" width="32"></i> View Site</a> 
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <small class="badge rounded-pill bg-primary">HTML,CSS,Django</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: linear-gradient(to bottom, rgba(140, 3, 81, 0.542), rgba(5, 17, 12, 0.849)),url('static/img/proj1.png'); background-size: cover;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+            <p class="">
+              Now, users can easily create profiles, search for donors by blood group, and connect with potential lifesavers. It's incredibly fulfilling to leverage technology for a meaningful cause
+            </p>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <a href="#" class="font-monospace badge rounded-pill bg-danger" style="text-decoration: none;"><i class="fa fa-eye " height="32" width="32"></i> View Site</a> 
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <small>California</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small>5d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  --->
+    </div>
+  
+    <center>
+        <a class="btn btn-outline-info" href="/allprojects" data-aos="fade-up">View All Projects</a>
+
+    </center>
+</div>
+
+
+
+
+<div class="b-example-divider"></div>
+
+<!--Skills-->
+
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom" data-aos="zoom-in" data-aos-duration="1000">Skills</h2>
+
+    <div class="skills-container py-3">
+      {% for skill in skills %}
+        <div class="skill">
+            <img src="/{{skill.skillIcon}}" alt="">
+            <h5>{{skill.skill}}</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="{{skill.progress}}" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped  bg-success" data-aos="fade-right"
+                data-aos-easing="ease-in-sine" style="width: {{skill.progress}}%"></div>
+            </div>
+           
+        </div>
+      {% endfor %}
+        <!----
+        <div class="skill">
+            <img src="/static/img/skills/css.png"  alt="">
+            <h5>CSS</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" data-aos="fade-right"         
+                data-aos-easing="ease-in-sine" style="width: 90%"></div>
+            </div>
+           
+        </div>
+        <div class="skill">
+            <img src="/static/img/skills/bootstrap.png" alt="">
+            <h5>Bootstrap</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" data-aos="fade-right"              
+                data-aos-easing="ease-in-sine" style="width: 90%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <img src="/static/img/skills/js.png" alt="">
+            <h5>JS</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" data-aos="fade-right"            
+                data-aos-easing="ease-in-sine" style="width: 40%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <img src="/static/img/skills/python.png" alt="">
+            <h5>Python</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" data-aos="fade-right"
+            style="width: 60%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <img src="/static/img/skills/django.png" alt="">
+            <h5>Python</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" data-aos="fade-right"
+            style="width: 60%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <img src="/static/img/skills/php.png" alt="">
+            <h5>Python</h5>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" data-aos="fade-right"
+            style="width: 60%"></div>
+            </div>
+        </div>
+      -->
+      </div>
+      
+
+
+
+</div>
+
+
+
+
+
+{%endblock%}
+
+
+{% block js %}
+
+<script src="{% static 'typed.js' %}"></script>
+
+<script>
+     var typed = new Typed('.type', {
+            strings: [
+            'Web developer', 
+            'CSE Student',
+            ''
+            ],
+            loop: true,
+            typeSpeed: 80,
+            backSpeed: 80,
+  
+          });
+</script>
+
+
+{%endblock%}

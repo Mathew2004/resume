@@ -1,4 +1,5 @@
 {% extends 'basic.html' %}
+{%block title%} Home | Evangel {%endblock%}
 {% block homeactive %} active {% endblock %}
 
 {% load static %}
@@ -14,8 +15,7 @@
 
 
 <div class="home-container">
-    <div class="side1" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="300" data-aos-anchor="#example-anchor"
-    data-aos-offset="500"
+    <div class="side1" 
 >
         <h4 > <span class="type"></span>  </h4>
         <h2 class="">Hi, I am Evangel</h2>
@@ -56,7 +56,7 @@
       {% for pj in projs %}
 
       <div class="col" data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: linear-gradient(to bottom, rgba(140, 3, 81, 0.542), rgba(5, 17, 12, 0.849)),url('/{{pj.feature}}'); background-size: cover;">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: linear-gradient(to bottom, rgba(14, 13, 14, 0.748), rgba(5, 17, 12, 0.786)),url('/{{pj.feature}}'); background-size: cover;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h3 class="pt-5 mt-2 mb-4 display-6 lh-1 fw-bold">{{pj.name}}</h3>
             <p>{{pj.shortDes|slice:"0:200"}}... <br/>
@@ -68,7 +68,7 @@
                 <a href="{{pj.live}}" target="_blank" class="font-monospace badge rounded-pill bg-danger" style="text-decoration: none;"><i class="fa fa-eye " height="32" width="32"></i> View Site</a> 
               </li>
               <li class="mx-1 mt-auto">
-                <p class="badge rounded-pill bg-primary">Web Dev</p>
+                <p class="badge rounded-pill bg-primary">{{pj.category}}</p>
                 
               </li>
               <li class="d-flex align-items-center">
